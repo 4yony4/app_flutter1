@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget{
       title: "MI Primera App",
       routes: rutas,
       initialRoute: "/homeview",
+      debugShowCheckedModeBanner: false,
     );
+
 
 
     return app;
