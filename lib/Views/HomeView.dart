@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget{
     return columna;
   }
 
-  Widget pintadoComoFlutter(){
+  Widget pintadoComoFlutter(BuildContext context){
 
     return Scaffold(
       appBar: AppBar(title: Text("MI PRIMERA APP"),backgroundColor: Colors.amber,),
@@ -31,8 +31,14 @@ class HomeView extends StatelessWidget{
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(onPressed: (){}, child: const Text("Btn1")),
-              TextButton(onPressed: (){}, child: const Text("Btn2")),
+              TextButton(onPressed: (){
+
+
+              }, child: const Text("Btn1")),
+              TextButton(onPressed: (){
+
+
+              }, child: const Text("Btn2")),
               IconButton(
                   icon: const FaIcon(FontAwesomeIcons.gamepad),
                   onPressed: () { print("Pressed"); }
@@ -41,13 +47,17 @@ class HomeView extends StatelessWidget{
           )
         ],
       ),
-      floatingActionButton: IconButton(onPressed: (){}, icon: const FaIcon(FontAwesomeIcons.airbnb)),
+      floatingActionButton: IconButton(onPressed: (){
+        //Navigator.of(context).popAndPushNamed("/mainview");
+        Navigator.of(context).pushNamed("/mainview");
+
+      }, icon: const FaIcon(FontAwesomeIcons.airbnb)),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return pintadoComoFlutter();
+    return pintadoComoFlutter(context);
   }
 
 
